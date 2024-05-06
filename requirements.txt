@@ -1,17 +1,17 @@
-altair==5.1.2
-cython>=0.29.24
-geopandas==0.9.0
-matplotlib==3.8.4
-numpy==1.26.4
-pandas==2.1.2
-plotly==5.21.0
-requests>=2.26.0,<3
-scipy>=1.7.1
-joblib>=1.1.0
-threadpoolctl>=3.0.0
-scikit-learn==1.0.2
-seaborn==0.11.2
-streamlit==1.28.0
+altair
+cython
+geopandas
+matplotlib
+numpy
+pandas
+plotly
+requests
+scipy
+joblib
+threadpoolctl
+scikit-learn
+seaborn
+streamlit
 streamlit_folium
 
 
