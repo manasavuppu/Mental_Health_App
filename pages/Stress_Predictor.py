@@ -14,15 +14,7 @@ import plotly.graph_objects as go
 st.set_page_config(layout="wide")
 
 # creating the header scroll bar
-html_code = """
-<div class="scrolling-news">
-    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none;">
-        FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
-    </a>
-</div>
-"""
-
-css_code = """
+html_and_css_code = """
 <style>
 .scrolling-news {
     position: fixed;
@@ -38,14 +30,28 @@ css_code = """
     white-space: nowrap;
 }
 
-.scrolling-news a {
-    display: inline-block;
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
 }
 
+.scrolling-news a {
+    display: inline-block;
+    color: red;
+    text-decoration: none;
+    animation: marquee 20s linear infinite; /* Fix the typo here */
+}
 </style>
+
+
+<div class="scrolling-news">
+    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank">
+        FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
+    </a>
+</div>
 """
 
-st.html(html_code + css_code)
+st.html(html_and_css_code)
 
 #cache function for faster data access
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
