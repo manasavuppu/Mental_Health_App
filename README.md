@@ -4,7 +4,7 @@ Welcome to the Mental Health Insight App! The goal is to shine a light on the gl
 How to View the App:
 
 -> Streamlit Cloud:
-You can view the working Streamlit app by clicking here [https://mentalhealthinsights.streamlit.app/].
+You can view the working Streamlit app by clicking here [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mentalhealthinsights.streamlit.app/).
 
 -> Running the App Locally:
 > Clone the repository by executing:
