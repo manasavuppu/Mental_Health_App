@@ -16,7 +16,13 @@ import plotly.graph_objects as go
 st.set_page_config(layout="wide")
 
 # creating the header scroll bar
-marquee_content = "FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration."
+# creating the header scroll bar
+marquee_content = """
+<a href="https://www.samhsa.gov/mental-health" target="_blank" style="color: red; text-decoration: none;">
+    FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
+</a>
+"""
+
 marquee_style = {
     "background": "#f4f4f4",  # Background color
     "font-size": "16px",      # Font size
@@ -26,8 +32,9 @@ marquee_style = {
     "animationDuration": "20s",  # Animation duration
 }
 
-# Render the marquee component
+# rending the marquee component
 streamlit_marquee(content=marquee_content, **marquee_style)
+
 
 #cache function for faster data access
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
