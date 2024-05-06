@@ -16,11 +16,40 @@ st.set_page_config(layout="wide")
 
 # code for headline scroll
 html_code = """
-<div class="scrolling-news">
+<div class="scrolling-news" id="scrolling-news">
     <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none;">
         FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
     </a>
 </div>
+"""
+
+javascript_code = """
+<script>
+window.onload = function() {
+    var scrollingElement = document.getElementById("scrolling-news");
+    var position = 0;
+    var animationId;
+
+    function scrollText() {
+        position -= 1;
+        scrollingElement.style.left = position + "px";
+        if (position <= -scrollingElement.offsetWidth) {
+            position = 200;
+        }
+        animationId = requestAnimationFrame(scrollText);
+    }
+
+    scrollText();
+
+    scrollingElement.addEventListener("mouseover", function() {
+        cancelAnimationFrame(animationId);
+    });
+
+    scrollingElement.addEventListener("mouseout", function() {
+        scrollText();
+    });
+};
+</script>
 """
 
 css_code = """
@@ -41,22 +70,13 @@ css_code = """
 
 .scrolling-news a {
     display: inline-block;
-    width: 100%; /* Ensure the anchor tag takes up the full width */
-}
-
-.scrolling-news a::after {
-    content: attr(data-text);
-    animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
 }
 </style>
 """
 
-st.html(html_code + css_code)
+st.html(html_code + javascript_code + css_code)
+
+
 
 # cache function to help with quick loading of data
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
