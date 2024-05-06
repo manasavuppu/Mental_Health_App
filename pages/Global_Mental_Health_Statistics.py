@@ -51,7 +51,7 @@ css_code = """
 </style>
 """
 
-st.components.v1.html(html_code + css_code, height=60)
+st.components.html(html_code + css_code, height=60)
 
 # cache function to help with quick loading of data
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
