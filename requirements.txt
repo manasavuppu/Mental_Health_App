@@ -1,8 +1,9 @@
-altair==4.1.0
+altair==5.1.2
 cython>=0.29.2
 geopandas==0.9.0
-matplotlib==3.5.0
-numpy==1.23.0
+matplotlib==3.8.4
+numpy==1.25.0
+pandas==2.1.2
 plotly==5.21.0
 requests>=2.26.0,<3
 scikit-learn==1.0.2
