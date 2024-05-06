@@ -17,7 +17,7 @@ st.set_page_config(layout="wide")
 # code for headline scroll
 html_code = """
 <div class="scrolling-news">
-    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none; width: 100%;">
+    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none;">
         FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
     </a>
 </div>
@@ -41,8 +41,12 @@ css_code = """
 
 .scrolling-news a {
     display: inline-block;
-    animation: marquee 10s linear infinite;
     width: 100%; /* Ensure the anchor tag takes up the full width */
+}
+
+.scrolling-news a::after {
+    content: attr(data-text);
+    animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
@@ -53,8 +57,6 @@ css_code = """
 """
 
 st.html(html_code + css_code)
-
-
 
 # cache function to help with quick loading of data
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
