@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import altair as alt
 import plotly.graph_objects as go
+import streamlit as st
+from streamlit_marquee import streamlit_marquee
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
@@ -14,44 +16,19 @@ import plotly.graph_objects as go
 
 st.set_page_config(layout="wide")
 
-# code for headline scroll
-html_and_css_code = """
-<style>
-.scrolling-news {
-    position: fixed;
-    z-index: 1000;
-    top: 10px;  /* Adjust top position as needed */
-    left: 10px;  /* Adjust left position as needed */
-    width: 200px;  /* Adjust width as needed */
-    background-color: #f4f4f4;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    white-space: nowrap;
+# creating the header scroll bar
+marquee_content = "FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration."
+marquee_style = {
+    "background": "#f4f4f4",  # Background color
+    "font-size": "16px",      # Font size
+    "color": "red",           # Text color
+    "width": "200px",         # Width of the marquee
+    "lineHeight": "35px",     # Line height
+    "animationDuration": "20s",  # Animation duration
 }
 
-@keyframes marquee {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
-
-.scrolling-news a {
-    display: inline-block;
-    color: red;
-    text-decoration: none;
-    animation: marquee 20s linear infinite;
-}
-</style>
-
-<div class="scrolling-news">
-    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank">
-        FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
-    </a>
-</div>
-"""
-
-st.html(html_and_css_code)
+# rending the marquee component
+streamlit_marquee(content=marquee_content, **marquee_style)
 
 # cache function to help with quick loading of data
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
