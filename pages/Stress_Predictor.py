@@ -15,7 +15,7 @@ st.set_page_config(layout="wide")
 
 # creating the header scroll bar
 html_code = """
-<div class="scrolling-news";">
+<div class="scrolling-news">
     <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none;">
         FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
     </a>
