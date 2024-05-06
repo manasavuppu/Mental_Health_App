@@ -8,7 +8,7 @@ You can view the working Streamlit app by clicking here [https://mentalhealthins
 
 -> Running the App Locally:
 > Clone the repository by executing:
-git clone https:
+git clone https://github.com/manasavuppu/Mental_Health_App.git 
 
 > Install the necessary packages by running:
 pip install -r requirements.txt
