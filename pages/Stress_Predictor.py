@@ -15,7 +15,7 @@ st.set_page_config(layout="wide")
 
 # creating the header scroll bar
 html_code = """
-<div class="scrolling-news">
+<div class="scrolling-news" style="height: 60px;">
     <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none;">
         FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
     </a>
@@ -50,7 +50,8 @@ css_code = """
 </style>
 """
 
-st.html(html_code + css_code, height=60)
+st.html(html_code + css_code, height=200)
+
 
 #cache function for faster data access
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
