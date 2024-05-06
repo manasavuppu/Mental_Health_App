@@ -39,7 +39,7 @@ html_and_css_code = """
     display: inline-block;
     color: red;
     text-decoration: none;
-    animation: marquee 20s linear infinite; /* Fix the typo here */
+    animation: marquee 20s linear infinite;
 }
 </style>
 
@@ -51,6 +51,7 @@ html_and_css_code = """
 </div>
 """
 
+# Render the marquee component
 st.html(html_and_css_code)
 
 #cache function for faster data access
