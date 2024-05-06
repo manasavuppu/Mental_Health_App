@@ -40,18 +40,8 @@ css_code = """
 
 .scrolling-news a {
     display: inline-block;
-    width: 100%; /* Ensure the anchor tag takes up the full width */
 }
 
-.scrolling-news a::after {
-    content: attr(data-text);
-    animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
-}
 </style>
 """
 
