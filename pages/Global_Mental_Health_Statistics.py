@@ -128,7 +128,7 @@ with tab1:
    
     st.write(' ')
 
-    color_scale = alt.Scale(scheme='red')
+    color_scale = alt.Scale(scheme='reds')
 
     # creating consolidated death count to be displayed
     filtered_data_summed = filtered_data.groupby('Entity')['Suffering_Count'].sum().reset_index(name='Total_Suffering_Count')
