@@ -37,7 +37,6 @@ css_code = """
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     white-space: nowrap;
-    animation: marquee 20s linear infinite;
 }
 
 @keyframes marquee {
@@ -47,14 +46,13 @@ css_code = """
 
 .scrolling-news a {
     display: inline-block;
+    nimation: marquee 20s linear infinite;
+
 }
 </style>
 """
 
 st.html(html_code + css_code)
-
-
-
 
 # cache function to help with quick loading of data
 @st.cache_data(show_spinner="Sometimes, taking time is good..")
