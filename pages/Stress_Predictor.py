@@ -16,7 +16,7 @@ st.set_page_config(layout="wide")
 # creating the header scroll bar
 html_code = """
 <div class="scrolling-news">
-    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none;">
+    <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" style="color: red; text-decoration: none; width: 100%;">
         FOR HELP: Reach out to SAMHSA: American Mental Health Services Administration.
     </a>
 </div>
@@ -41,6 +41,7 @@ css_code = """
 .scrolling-news a {
     display: inline-block;
     animation: marquee 10s linear infinite;
+    width: 100%; /* Ensure the anchor tag takes up the full width */
 }
 
 @keyframes marquee {
@@ -51,6 +52,7 @@ css_code = """
 """
 
 st.html(html_code + css_code)
+
 
 
 #cache function for faster data access
